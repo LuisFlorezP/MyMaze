@@ -1,14 +1,8 @@
 ﻿using Maze.Logic;
 
-
-try
-{
-    var maze = new MyMaze(30, 100);
-    Console.WriteLine(maze);
-    maze.Solution();
-    Console.WriteLine(maze);
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
+Console.BackgroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.Yellow;
+var maze = new MyMaze(30, 100);
+Console.Write(maze);
+Console.ForegroundColor = ConsoleColor.White;
+Console.BackgroundColor = ConsoleColor.Black;

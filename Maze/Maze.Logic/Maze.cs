@@ -67,6 +67,7 @@
             {
                 _maze[1, i] = ' ';
             }
+
             _maze[1, N - 1] = '█';
             for (int i = 2; i < N - 2; i++)
             {
@@ -77,85 +78,15 @@
                 }
                 _maze[i, N - 1] = '█';
             }
+            _maze[N - 2, 0] = '█';
             for (int i = 1; i < N; i++)
             {
                 _maze[N - 2, i] = ' ';
             }
-            _maze[N - 2, 0] = '█';
+
             for (int i = 0; i < N; i++)
             {
                 _maze[N - 1, i] = '█';
-            }
-        }
-
-        public void Solution()
-        {
-            _maze[1, 0] = 'R';
-            int i = 1, j = 1;
-            while (true)
-            {
-                if (i < N - 2) 
-                {
-                    if (_maze[i, j + 1] != 'L')
-                    {
-                        if (_maze[i, j + 1] != '█')
-                        {
-                            _maze[i, j] = 'R';
-                            j++;
-                        }
-                        else
-                        {
-                            if (_maze[i + 1, j] != '█')
-                            {
-                                _maze[i, j] = 'D';
-                                i++;
-                            }
-                            else
-                            {
-                                if (_maze[i, j - 1] != '█')
-                                {
-                                    _maze[i, j] = 'L';
-                                    j--;
-                                }
-                                else
-                                {
-                                    throw new Exception("Maze is not valid.");
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (_maze[i + 1, j] != '█')
-                        {
-                            _maze[i, j] = 'D';
-                            i++;
-                        }
-                        else
-                        {
-                            throw new Exception("Maze is not valid.");
-                        }
-                    }
-                }
-                else
-                {
-                    if (j < N - 1)
-                    {
-                        if (_maze[N - 2, j + 1] != '█')
-                        {
-                            _maze[N - 2, j] = 'R';
-                            j++;
-                        }
-                        else
-                        {
-                            throw new Exception("Maze is not valid.");
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
             }
             _maze[N - 2, N - 1] = 'R';
         }
