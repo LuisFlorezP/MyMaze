@@ -3,7 +3,7 @@
 
 try
 {
-    var maze = new MyMaze(10, 7);
+    var maze = new MyMaze(30, 100);
     Console.WriteLine(maze);
     maze.Solution();
     Console.WriteLine(maze);
