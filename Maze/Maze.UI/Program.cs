@@ -4,9 +4,12 @@
 try
 {
     var maze = new MyMaze(50, 100);
-    Console.WriteLine(maze);
     maze.Solution();
+    Console.BackgroundColor = ConsoleColor.Blue;
+    Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine(maze);
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.BackgroundColor = ConsoleColor.Black;
 }
 catch (Exception ex)
 {
